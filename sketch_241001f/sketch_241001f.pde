@@ -15,6 +15,6 @@ void demethode(){
 int nummer1 = 9;
 int nummer2 = 60;
 int nummer3 = 0;
-nummer3 = Math.min(nummer1,nummer2);
+nummer3 = nummer1 + nummer2 / 2;
 println(nummer3);
 }
