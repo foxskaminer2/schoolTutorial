@@ -4,27 +4,27 @@
 opdracht 9.4
 */
 
-float lijn1 = 0;
-float lijn2 = 0;
-float lijn3 = 0;
-float lijn4 = 0;
+float lijn1;
+float lijn2;
+float lijn3;
+float lijn4;
 
 void setup(){
 size(1230, 894);
-lijn1 = Methode1(500,600);
-lijn2 = Methode2(400,500);
-lijn3 = Methode3(200,300);
-lijn4 = Methode4(100,200);
-line(lijn1, lijn2, lijn3, lijn4);
+methode(lijn1(500.0,600.0,600.0,500.0));
+methode(lijn2(400.0,500.0,400.0,500));
+methode(lijn3(200.0,300.0,200.0,300.0));
+methode(lijn4(100.0,200.0,100.0,200.0));
 }
-
 
 
 void draw(){
 }
 
-void methode1(boolean methode1){
-
-if(lijn1 = true){
-  line(lijn1);}
+void methode (float lijn1, float lijn2, float lijn3,  float lijn4){
+  line(lijn1);
+  line(lijn2);
+  line(lijn3);
+  line(lijn4);
+  
 }
