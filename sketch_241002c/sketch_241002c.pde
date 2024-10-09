@@ -4,27 +4,27 @@
 opdracht 9.4
 */
 
-float lijn1;
-float lijn2;
-float lijn3;
-float lijn4;
+float x1 = 900.0;
+float y1 = 400.0;
+float x2 = 700.0;
+float y2 = 100.0;
 
 void setup(){
 size(1230, 894);
-methode1(lijn1(500.0,600.0,600.0,500.0));/*
-methode(lijn2(400.0,500.0,400.0,500.0));
-methode(lijn3(200.0,300.0,200.0,300.0));
-methode(lijn4(100.0,200.0,100.0,200.0));*/
+methode(x1,500.0,900.0,500.0);
+methode(y1,500.0,400.0,500.0);
+methode(x2,300.0,700.0,300.0);
+methode(y2,200.0,100.0,200.0);
 }
 
 
 void draw(){
 }
 
-void methode1 (float lijn1, float lijn2, float lijn3,  float lijn4){
-  line(lijn1,4,5,8);/*
-  line(lijn2);
-  line(lijn3);
-  line(lijn4);
-  */
+void methode (float x1, float y1, float x2,  float y2){
+  line(x1,500.0,900.0,500.0);
+  line(y1,500.0,400.0,500.0);
+  line(x2,500.0,700.0,500.0);
+  line(y2,200.0,100.0,200.0);
+  
 }
