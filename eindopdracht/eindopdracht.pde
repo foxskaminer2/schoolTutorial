@@ -1,10 +1,13 @@
-int mainturret;
+int [] mainturret1;
 void setup(){
+mainturret1[0] = 75;
+mainturret1[1] = 510;
+mainturret1[2] = 62;
+mainturret1[3] = 16;
+mainturret1[4] = 10;
 size(2400,1000);
 line(2400, 560, 0,560);
 fill(137, 137, 137);
-mainturret = mainturret1(75, 510, 62, 16, 10);
-mainturret1 = (75, 62, 16, 10);
 /* main */
 rect(25, 500, 67, 45);
 rect(mainturret1);
