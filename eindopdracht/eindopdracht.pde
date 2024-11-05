@@ -1,5 +1,5 @@
-int []mainturret1;
-int []mainturret;
+int [5]mainturret1;
+int [5]mainturret;
 void setup(){
 mainturret [0] = 75;
 mainturret [1] = 510;  
