@@ -1,4 +1,3 @@
-/* int setup */
 int []mainturret1;
 int []mainturret;
 int []mainbox;
@@ -107,4 +106,16 @@ rect(minishell1[0], minishell1[1], minishell1[2], minishell1[3], minishell1[4]);
 rect(mainshell1[0], mainshell1[1], mainshell1[2], mainshell1[3], mainshell1[4]);
 fill(137, 137, 137);
 rect(1750, 310, -62, 16, 10);
+}
+keyPressed(){
+if(key == 'D'){
+rect(mainturret[0]) += 15;
+rect(mainbox[0])+= 15;
+rect(mainroller[0]) += 15;}
+}
+keyReleased(){
+if(key == 'D'){
+rect(mainturret[0]) += 0;
+rect(mainbox[0])+= 0;
+rect(mainroller[0]) += 0;}
 }
