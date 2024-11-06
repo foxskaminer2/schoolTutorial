@@ -3,6 +3,8 @@ int []mainturret1;
 int []mainturret;
 int []mainbox;
 int []mainbox1;
+int []mainroller;
+int []mainroller1;
 int []minishell;
 int []minishell1;
 int []mainshell;
@@ -14,12 +16,14 @@ void setup(){
  /*main grouping*/
 int[] mainturret = new int[5];
 int[]mainbox = new int[4];
+int[]mainroller = new int [5];
 int[]minishell = new int[5];
 int[]mainshell = new int[5];
 
 /*secondary grouping*/
 int[] mainturret1 = new int[5];
 int[]mainbox1 = new int[4];
+int[]mainroller1 = new int[5];
 int[]minishell1 = new int[5];
 int[]mainshell1 = new int[5];
 /*main number grouping*/
@@ -34,6 +38,11 @@ mainbox [0] = 25;
 mainbox [1] = 500;
 mainbox [2] = 67;
 mainbox [3] = 45;
+mainroller [0] = 13;
+mainroller [1] = 535;
+mainroller [2] = 85;
+mainroller [3] = 25;
+mainroller [4] = 85;
 
 /*shells*/
 mainshell [0] = 13;
@@ -58,6 +67,11 @@ mainbox1 [0] = 1725;
 mainbox1 [1] = 500;
 mainbox1 [2] = 67;
 mainbox1 [3] = 45;
+mainroller1 [0] = 1713;
+mainroller1 [1] = 535;
+mainroller1 [2] = 85;
+mainroller1 [3] = 25;
+mainroller1 [4] = 85;
 
 /*secondary shells*/
 mainshell1 [0] = 1750;
@@ -78,7 +92,7 @@ fill(137, 137, 137);
 /* main */
 rect(mainbox[0], mainbox[1], mainbox[2], mainbox[3]);
 rect(mainturret[0], mainturret[1], mainturret[2], mainturret[3], mainturret[4]);
-rect(13, 535, 85, 25, 85);
+rect(mainroller[0], mainroller[1], mainroller[2], mainroller[3], mainroller[4]);
 fill(red, zero, zero);
 rect(minishell[0], minishell[1], minishell[2], minishell[3], minishell[4]);
 rect(mainshell[0], mainshell[1], mainshell[2], mainshell[3], mainshell[4]);
@@ -86,11 +100,11 @@ fill(137, 137, 137);
 
 /* second */
 rect(mainbox1[0], mainbox1[1], mainbox1[2], mainbox1[3]);
-rect(1750, 510, -62, 16, 10);
+rect(mainroller1[0], mainroller1[1], mainroller1[2], mainroller1[3], mainroller1[4]);
 rect(mainturret1[0], mainturret1[1], mainturret1[2], mainturret1[3], mainturret1[4]);
 fill(red, zero, zero);
 rect(minishell1[0], minishell1[1], minishell1[2], minishell1[3], minishell1[4]);
 rect(mainshell1[0], mainshell1[1], mainshell1[2], mainshell1[3], mainshell1[4]);
 fill(137, 137, 137);
-rect(1713, 535, 85, 25, 85);
+rect(1750, 310, -62, 16, 10);
 }
