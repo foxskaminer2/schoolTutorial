@@ -107,15 +107,15 @@ rect(mainshell1[0], mainshell1[1], mainshell1[2], mainshell1[3], mainshell1[4]);
 fill(137, 137, 137);
 rect(1750, 310, -62, 16, 10);
 }
-keyPressed(){
+void draw(){
 if(key == 'D'){
-rect(mainturret[0]) += 15;
-rect(mainbox[0])+= 15;
-rect(mainroller[0]) += 15;}
-}
-keyReleased(){
-if(key == 'D'){
+keyPressed();
+(mainturret[0]) += 15;
+(mainbox[0])+= 15;
+(mainroller[0]) += 15;
+
+}keyReleased(){
 rect(mainturret[0]) += 0;
 rect(mainbox[0])+= 0;
-rect(mainroller[0]) += 0;}
+rect(mainroller[0]) += 0;
 }
