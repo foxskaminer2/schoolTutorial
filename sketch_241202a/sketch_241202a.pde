@@ -4,7 +4,7 @@ void setup() {
 float x;
 float x2 = 1823;
 float bulletX;
-float bulletX2 = 1823;
+float bulletX2;
 boolean shooting = false;
 boolean shooting2 = false;
 
@@ -13,6 +13,7 @@ void draw() {
   drawLeftPointedTank(x);
   drawRightPointedTank(x2);
   bulletX = x;
+ bulletX2 = x2;
 
   if (shooting == true) {
     bulletX = x + 8;
@@ -27,10 +28,10 @@ void draw() {
     shooting = false;
     shooting2 = false;
   }
-  if (bulletX >= width) {
+  if (bulletX == width) {
     shooting = false;
   }
-  if (bulletX2 >= width) {
+  if (bulletX2 == width) {
     shooting2 = false;
   }
 
@@ -59,11 +60,10 @@ void keyPressed() {
     x =x -10;
   }
   if (keyCode == ENTER) {
-    bulletX = x;
+    bulletX = bulletX + 8;
     shooting = true;
   }
   if (keyCode == TAB) {
-    x2 = bulletX2;
     bulletX2 = bulletX2 + 8;
     shooting2 = true;
 }
