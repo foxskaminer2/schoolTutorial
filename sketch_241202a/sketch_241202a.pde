@@ -12,18 +12,18 @@ void draw() {
   background(0, 0, 0);
   drawLeftPointedTank(x);
   drawRightPointedTank(x2);
+  bulletX = x;
 
-
-  if (shooting) {
-    bulletX  = x + 8;
+  if (shooting == true) {
+    bulletX = x + 8;
     drawBullet(bulletX);
   }
-    if (shooting2) {
-    x2  = bulletX2 - 8;
+    if (shooting2 == true) {
+    bulletX2 = x2 - 8;
     drawBullet2(bulletX2);
   }
   
-  if (bulletX >= bulletX2){
+  if (bulletX <= bulletX2){
     shooting = false;
     shooting2 = false;
   }
@@ -59,11 +59,12 @@ void keyPressed() {
     x =x -10;
   }
   if (keyCode == ENTER) {
-    bulletX = 0;
+    bulletX = x;
     shooting = true;
   }
   if (keyCode == TAB) {
-    bulletX2 = 1823;
+    x2 = bulletX2;
+    bulletX2 = bulletX2 + 8;
     shooting2 = true;
 }
 
