@@ -1,48 +1,77 @@
-void setup() {
-  size(2400, 1000);
+class Bullet {
+
+  float x;
+  float speed = 8;
+  boolean visible = false;
+
+  Bullet(float x, float speed) {
+    this.x=x;
+    this.speed= speed;
+    this.visible = true;
+  }
+
+  public void tekenJezelf() {
+    if (visible) {
+      rect(x, 100, 35, 15);
+    }
+  }
+
+  public void update() {
+    if (visible) {
+      x = x + speed;
+    }
+  }
+
+  void respawn(float x) {
+    visible=true;
+    this.x=x;
+  }
+
+  void dissapear() {
+    visible = false;
+    x=-10;
+  }
 }
 float x;
 float x2 = 1823;
-float bulletX;
-float bulletX2;
-boolean shooting = false;
-boolean shooting2 = false;
+ArrayList bullets = new ArrayList();
+
+void setup() {
+  size(2400, 1000);
+  //  Bullet bullet = new Bullet(0, 8);
+  //Bullet bullet2 = new Bullet(1823, -8);
+}
 
 void draw() {
   background(0, 0, 0);
+
   drawLeftPointedTank(x);
   drawRightPointedTank(x2);
-  bulletX = x;
- bulletX2 = x2;
 
-  if (shooting == true) {
-    bulletX = x + 8;
-    drawBullet(bulletX);
-  }
-    if (shooting2 == true) {
-    bulletX2 = x2 - 8;
-    drawBullet2(bulletX2);
-  }
-  
-  if (bulletX <= bulletX2){
-    shooting = false;
-    shooting2 = false;
-  }
-  if (bulletX == width) {
-    shooting = false;
-  }
-  if (bulletX2 == width) {
-    shooting2 = false;
-  }
+// maak een loop over bullets..
+for(int i =0; i < bullets.size(); i++){
+    bullets[i].update();
+    bullets[i].tekenJezelf();
+}
+
+
+
+//  if (bullet.x >= bullet2.x) {
+//    bullet.dissapear();
+//    bullet2.dissapear();
+//  }
+//  if (bullet.x >= width) {
+//    bullet.dissapear();
+//  }
+//  if (bullet2.x < 0) {
+//    bullet2.dissapear();
+//  }
 
   drawTurret();
 }
 
 void drawBullet(float x) {
   rect(x, 100, 35, 15);
-}
-void drawBullet2(float x2) {
-  rect(x2, 100, 35, 15);
 }
 
 void keyPressed() {
@@ -60,16 +89,15 @@ void keyPressed() {
     x =x -10;
   }
   if (keyCode == ENTER) {
-    bulletX = bulletX + 8;
-    shooting = true;
+    Bullet bullet = new Bullet(0, 8);
+    bullets.add(bullet);
   }
   if (keyCode == TAB) {
-    bulletX2 = bulletX2 + 8;
-    shooting2 = true;
+    Bullet bullet = new Bullet(width, -8);
+    bullets.add(bullet);
+  }
 }
-
-}
-void keyReleased(){
+void keyReleased() {
 }
 void drawTurret() {
   //rect(mainturret[0], mainturret[1], mainturret[2], mainturret[3], mainturret[4]);
@@ -81,5 +109,5 @@ void drawLeftPointedTank(float x) {
 
 
 void drawRightPointedTank(float x2) {
-    rect(x2, 100, 100, 100);
+  rect(x2, 100, 100, 100);
 }
