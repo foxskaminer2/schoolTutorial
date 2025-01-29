@@ -1,42 +1,67 @@
 import java.util.Random;
 class falling_box{
-int px = 700;
-int py = 200;
-int sx = 40;
-int sy = 40;
-int sp = 10;
+  int px = 700;
+  int py = 0;
+  int sx = 40;
+  int sy = 40;
+  int sp = 10;
+  
+   void Draw(){
+   rect(px, py, sx, sy, sp); 
+  }
+  
+  void Update(Random _a) {  
+  py = py + sp;
+  
+  if(py > 990 ){
+  py = 0;
+  px= _a.nextInt(width);
+  }
+  
+}
+}
+ class player{
+  int sp = 5;
+  int ysize = 1000;
+  int px = 700;
+  int py = 960;
+  int sx = 40;
+  int sy = 40;
 
+  void Draw(){
+   rect(px, py, sx, sy, sp); 
+  }
+  
+  void Key(){
+     if (key == 'l'){
+   px += sp;
+}else if(key == 'a'){
+  px -= sp;}
 }
-class player{
-int playersp = 5;
-int ysize = 1000;
-int playerpx = 700;
-int playerpy = 960;
-int playersx = 40;
-int playersy = 40;
+  
 }
+
+player _player = new player();
+falling_box fBox = new falling_box();
 
 void setup(){
   size(2400,1000);
-rect(playerpx, playerpy, playersx, playersy, playersp);
+
 }
 
 void draw(){
   Random rand = new Random(); 
   background(0,0,255);
 
-  rect(px,py,sx,sy);
-  py = py + sp;
- if(py > ysize ){
-  py = 0;
-  px = rand.nextInt(width);
+  _player.Draw();
+  fBox.Draw();
+  fBox.Update(rand);
+  
+ 
  }
  
-}
+
 
 void keyPressed(){
- if (key == 'l'){
-   playerpx += playersp;
-}else if(key == 'a'){
-  playerpx -= playersp;}
+  _player.Key();
 }
