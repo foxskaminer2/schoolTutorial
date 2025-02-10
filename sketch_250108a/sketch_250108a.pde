@@ -2,6 +2,7 @@ import java.util.Random;
 import java.util.ArrayList; // import the ArrayList class
 
 class manager{
+  int fbCount = 0, maxFbCount = 4;
   
   void IncCount(ArrayList<falling_box> _fbs){
     ArrayList<falling_box> newBoxes = new ArrayList<falling_box>(); 
